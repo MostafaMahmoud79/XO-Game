@@ -2,8 +2,6 @@
 
 XO Online is an exciting Tic Tac Toe game.
 
----
-
 ## About the Game
 
 The game has different modes:
@@ -14,7 +12,6 @@ The game has different modes:
 The game saves your history with name and photo.  
 The profile page has all game history and statistics.
 
----
 
 ## Screenshots
 
@@ -31,7 +28,6 @@ The profile page has all game history and statistics.
 
 ![ProfilePage - Section 3](assets/images/profile-page.png)
 
----
 
 ## Live Demo
 
