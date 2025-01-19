@@ -1,0 +1,143 @@
+/* that for all the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* that for the html and body */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: rgba(0, 119, 182, 1);
+}
+
+/* that for the h1 GamePage */
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* that for the div wrapper that contain the container and the reset button */
+.wrapper {
+  margin-bottom: 28px;
+}
+
+/* the styles of the container  */
+.container {
+  width: 58vmin;
+  height: 58vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vmin;
+  margin: auto;
+}
+
+/* styles of the buttons inside the container that will be xo later */
+.button-option {
+  background: #ffffff;
+  height: 18vmin;
+  width: 18vmin;
+  border: none;
+  border-radius: 8px;
+  font-size: 12vmin;
+  color: rgba(0, 119, 182, 1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* styles of the reset button */
+#restart {
+  font-size: 18px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background-color: #0a002788;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  margin: 1.5em auto 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* styles of the popup that will appear when game is over */
+.popup {
+  background: rgba(0, 119, 182, 1);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 12vmin;
+}
+
+/* styles of the newgame button */
+#new-game,
+.letter-button {
+  font-size: 0.6em;
+  padding: 1rem 2rem;
+  background-color: #0a002788;
+  color: #ffffff;
+  border-radius: 0.2em;
+  border: none;
+  cursor: pointer;
+}
+
+/* msg of win or lose styles */
+#message {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1em;
+}
+
+.popup {
+  position: absolute;
+  inset: 0;
+}
+
+.popup .letter-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.popup.hide {
+  display: none;
+}
+
+/* for responsive */
+@media screen and (max-width: 600px) {
+  .button-option {
+    font-size: 16vmin;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  .popup {
+    font-size: 16vmin;
+  }
+
+  #message {
+    font-size: 1.2em;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

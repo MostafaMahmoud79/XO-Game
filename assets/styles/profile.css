@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-1: #0077b6;
+  --color-2: #0096c7;
+  --color-total: #dbd5b299;
+  --color-wins: #1bc44b99;
+  --color-losses: #d6493399;
+  --color-draws: #33333399;
+  --color-rate: #3f37c999;
+}
+
+main {
+  background-color: var(--color-1);
+  display: flex;
+  flex-direction: column;
+  padding-block: 5vh;
+  padding-inline: 5vw;
+}
+
+main > h1,
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+/* popup of reset button */
+.resetData {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-width: 280px;
+  max-width: 500px;
+  height: auto;
+  background: #e2e2e2;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid white;
+  animation: fade 1s ease 1 forwards;
+  z-index: 100;
+}
+.resetData h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1.5rem 1rem 0.5rem;
+}
+.resetData p {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 2rem 4.5rem;
+}
+.resetData button {
+  background: transparent;
+  border: none;
+  color: #1678e5;
+  height: 3rem;
+  font-size: 1rem;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}
+.resetData button:nth-of-type(1) {
+  border-top: 1px solid #b4b4b4;
+  border-right: 1px solid #b4b4b4;
+  left: 0;
+  border-radius: 0 0 0 10px;
+}
+.resetData button:nth-of-type(2) {
+  border-top: 1px solid #b4b4b4;
+  right: 0;
+  border-radius: 0 0 10px 0;
+}
+.resetData button:focus,
+.resetData button:hover {
+  font-weight: bold;
+  background: #efefef;
+}
+.resetData button:active {
+  background: #d6d6d6;
+}
+
+.profile,
+.profile-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-user .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-user .user-pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 280px; /* maximum width for profile image */
+}
+
+.user-pic img {
+  max-width: 100%;
+}
+
+.user-pic p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  word-break: break-all;
+  font-size: 14px;
+  padding: 4px;
+  background-color: #32323232;
+}
+
+.profile-control {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-control > button {
+  border-radius: 5px;
+  background-color: var(--color-2);
+  padding: 20px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.profile-control > button > span {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  transition: 0.5s;
+}
+
+.profile-control > button > span:after {
+  content: "\00bb";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.profile-control > button:hover > span {
+  padding-right: 20px;
+}
+
+.profile-control > button:hover > span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.profile-statistics,
+.statistics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.statistics-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.statistics-container > div {
+  padding: 10px;
+}
+
+.statistics-container > div > span {
+  padding-inline: 20px;
+}
+
+.count-total {
+  background-color: var(--color-total);
+}
+
+.count-wins,
+.win {
+  background-color: var(--color-wins);
+}
+
+.count-losses,
+.lose {
+  background-color: var(--color-losses);
+}
+
+.count-draws,
+.draw {
+  background-color: var(--color-draws);
+}
+
+.count-rate {
+  background-color: var(--color-rate);
+}
+
+.statistics-container > *:hover,
+.history-list > *:hover {
+  box-shadow: 0 0 2px 2px #000;
+}
+
+.history,
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.history-list{
+  flex-direction: column-reverse;
+}
+
+.history-list > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.history-list > div::before {
+  content: attr(class);
+}
+
+.history-list time::after {
+  content: attr(datetime);
+}
+
+.editData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* label change player name contain span and input text to change name  */
+.changePlayerr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.changePlayerr > span {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.changePlayerr > input {
+  width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.saveedits {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: var(--color-2);
+  /* cursor: pointer; */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.saveedits > button {
+  width: 40%;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.savePlayerName {
+  background-color: chartreuse;
+}
+
+.cancelPlayerName {
+  background-color: red;
+}
+.btn {
+  border: 2px solid #6c5ce7;
+  padding: 0.2em 0.4em;
+  margin: 0.4em;
+  border-radius: 0.4em;
+  background-color: #a29bfe;
+  transition: 1s;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+  /* make text in center */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* btn hover */
+.btn:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  main > h1,
+  h2 {
+    /* text-align: center; */
+    font-size: 1.5rem;
+  }
+
+  .profile-user {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  .profile-user > * {
+    flex: 1;
+  }
+
+  .profile-user > .user-info {
+    flex-direction: row;
+  }
+
+  .profile-user > .profile-control {
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+  }
+
+  .profile-user > .profile-control > button {
+    flex: 0 0 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  main > h1,
+  h2 {
+    /* text-align: center; */
+    font-size: 1.25rem;
+  }
+}
