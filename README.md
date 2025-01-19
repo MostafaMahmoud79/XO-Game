@@ -18,20 +18,18 @@ The profile page has all game history and statistics.
 
 ## Screenshots
 
-### Main Menu
-<div align="center">
-  <img src="assets/images/main-menu.png" alt="Main Menu">
-</div>
 
-### Gameplay
-<div align="center">
-  <img src="assets/images/gameplay.png" alt="Gameplay">
-</div>
+<h1 align="center">Main Menu</h1>
 
-### Profile Page
-<div align="center">
-  <img src="assets/images/profile-page.png" alt="Profile Page">
-</div>
+![MainMenu - Section 1](assets/images/main-menu.png)
+
+<h1 align="center">Gameplay</h1>
+
+![Gameplay - Section 2](assets/images/gameplay.png)
+
+<h1 align="center">Profile Page</h1>
+
+![ProfilePage - Section 3](assets/images/profile-page.png)
 
 ---
 
